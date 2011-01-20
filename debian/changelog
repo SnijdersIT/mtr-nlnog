@@ -1,3 +1,9 @@
+mtr (0.75-nlnog1-2build1) lucid; urgency=low
+
+  * allow non-root users to specify subsecond intervals
+
+ -- Peter van Dijk <peter@xlshosting.nl>  Thu, 20 Jan 2011 20:08:24 +0100
+
 mtr (0.75-2build1) lucid; urgency=low
 
   * rebuild rest of main for armel armv7/thumb2 optimization;

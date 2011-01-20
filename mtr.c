@@ -209,8 +209,10 @@ void parse_arg (int argc, char **argv)
 	fprintf (stderr, "mtr: wait time must be positive\n");
 	exit (1);
       }
+#if 0 /* change for NLNOG RING */
       if (getuid() != 0 && WaitTime < 1.0)
 	WaitTime = 1.0;
+#endif
       break;
     case 'f':
       fstTTL = atoi (optarg);
