@@ -1,0 +1,387 @@
+mtr (0.75-2build1) lucid; urgency=low
+
+  * rebuild rest of main for armel armv7/thumb2 optimization;
+    UbuntuSpec:mobile-lucid-arm-gcc-v7-thumb2
+
+ -- Alexander Sack <asac@ubuntu.com>  Sun, 07 Mar 2010 00:57:24 +0100
+
+mtr (0.75-2) unstable; urgency=low
+
+  * Use rm -f in rules clean target where necessary, closes: #499789
+ 
+ -- Robert Woodcock <rcw@debian.org>  Mon, 22 Sep 2008 07:30:21 -0700
+
+mtr (0.75-1) unstable; urgency=low
+
+  * New upstream version with rewritten GTK+ code
+    closes: #65005, #30263
+  * Bumped Standards-Version to 3.8.0
+  * Lintian cleanups
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 21 Sep 2008 10:39:10 -0700
+
+mtr (0.73-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Robert Woodcock <rcw@debian.org>  Wed, 16 Apr 2008 19:38:12 -0700
+
+mtr (0.72-2) unstable; urgency=low
+
+  * Reupload to unstable since etch is released.
+  * Include no-busy-wait patch in #156378,
+    closes: #156378, #259906, #348650, #384444
+  * Use debhelper compatibility level 5
+
+ -- Robert Woodcock <rcw@debian.org>  Fri, 25 May 2007 21:42:04 -0700
+
+mtr (0.72-1) experimental; urgency=low
+
+  * New upstream version fixes IPv6 reverse DNS lookups for 8-bit
+    hostnames, closes: #384926
+
+ -- Robert Woodcock <rcw@debian.org>  Mon, 01 Jan 2007 15:33:33 -0800
+
+mtr (0.71-2) unstable; urgency=low
+
+  * Run autoreconf --force --install to allow building without automake,
+    closes: #365845
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 14 May 2006 09:37:17 -0700
+
+mtr (0.71-1) unstable; urgency=low
+
+  * New upstream version
+  * Follow autotools-dev suggestions regarding timestamping, closes: #362614
+
+ -- Robert Woodcock <rcw@debian.org>  Tue, 02 May 2006 18:24:05 -0700
+
+mtr (0.70-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Robert Woodcock <rcw@debian.org>  Thu, 23 Mar 2006 17:31:28 -0800
+
+mtr (0.69-4) unstable; urgency=low
+
+  * Woops, forgot to run autoconf for the configure.in change in -3,
+    closes: #254089
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 05 Mar 2006 18:19:05 -0800
+
+mtr (0.69-3) unstable; urgency=low
+
+  * Added check for __res_mkquery to build on amd64,
+    closes: #166613, #254089, #257981, #354342
+  * Uppercased initial letter of menu title, closes: #320609
+  * Fixed manual page and PrintHelp function for -p/-s switcharoo,
+    closes: #305728
+  * DNS fix from Jarek Kaminski if no nameservers are configured,
+    closes: #301346
+
+ -- Robert Woodcock <rcw@debian.org>  Fri, 03 Mar 2006 15:16:27 -0800
+
+mtr (0.69-2) unstable; urgency=low
+
+  * Added upstream source location to copyright file, closes #312670
+
+ -- Robert Woodcock <rcw@debian.org>  Fri, 10 Jun 2005 19:29:46 -0700
+
+mtr (0.69-1) unstable; urgency=low
+
+  * New upstream version adds IPv6 support
+  * Fixed copyright file, closes #290215
+  * Allow for IPv4 operation on IPv4-only systems
+  * Copy addr buffer in net_process_ping immediately to avoid overwriting it
+
+ -- Robert Woodcock <rcw@debian.org>  Wed, 23 Mar 2005 19:39:59 -0800
+
+mtr (0.67-1) unstable; urgency=high
+
+  * SECURITY: New upstream version fixes off-by-one error with MAXFLD,
+    closes: #285228
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 12 Dec 2004 11:26:07 -0800
+
+mtr (0.63-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Apply patch from Christoph Berg <cb@df7cb.de> converting fld_index[] from
+    char to int in order to work around the invalid assumption that plain char++
+    is always unsigned (closes: #283756).
+
+ -- Mark Brown <broonie@debian.org>  Thu,  9 Dec 2004 11:39:42 +0000
+
+mtr (0.63-1.1) unstable; urgency=low
+
+  * NMU.
+  * Remove useless dependency on non-existing automake-1.5 and
+    autoconf (Closes: #266006).
+
+ -- Christoph Berg <cb@df7cb.de>  Sat, 27 Nov 2004 01:34:28 +0100
+
+mtr (0.63-1) unstable; urgency=low
+
+  * New upstream version
+  * New version compiles against gtk2.4, closes: #262606
+  * New version validates input to order-of-fields option, preventing
+    segfaults, closes: #264055, #264694
+  * Fixed virtual dependancy on automaken in response to #257981
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 15 Aug 2004 16:35:32 -0700
+
+mtr (0.58-1) unstable; urgency=low
+
+  * New upstream version, closes: #252369
+
+ -- Robert Woodcock <rcw@debian.org>  Sat, 03 Jul 2004 13:59:24 -0700
+
+mtr (0.54-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Robert Woodcock <rcw@debian.org>  Sat,  3 May 2003 08:57:48 -0700
+
+mtr (0.53-1) unstable; urgency=low
+
+  * New upstream version, closes: #189692
+
+ -- Robert Woodcock <rcw@debian.org>  Wed, 23 Apr 2003 19:08:15 -0700
+
+mtr (0.52-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 24 Nov 2002 12:11:51 -0800
+
+mtr (0.51-1) unstable; urgency=low
+
+  * New upstream version fixes hanging --report option, closes: #148045
+  * Reverted some makefile reversions in 0.51
+
+ -- Robert Woodcock <rcw@debian.org>  Fri, 24 May 2002 16:06:34 -0700
+
+mtr (0.50-1) unstable; urgency=low
+
+  * New upstream version
+  * Fixes hang on window resize bug, closes: #94913, #145641
+
+ -- Robert Woodcock <rcw@debian.org>  Tue,  7 May 2002 21:13:32 -0700
+
+mtr (0.48-1) unstable; urgency=high
+
+  * New upstream version, fixes MTR_OPTIONS security hole, closes #137102
+  * Added absolute pathnames to debian/rules
+
+ -- Robert Woodcock <rcw@debian.org>  Wed,  6 Mar 2002 10:10:05 -0800
+
+mtr (0.45-1) unstable; urgency=low
+
+  * New upstream version, closes: #130683
+
+ -- Robert Woodcock <rcw@debian.org>  Thu, 24 Jan 2002 16:57:26 -0800
+
+mtr (0.44-2) unstable; urgency=low
+
+  * Removed mtr-tiny menu entry, closes: #125741
+  * Fixed paragraph separation in package descriptions, closes: #120790
+  * Lintian cleanups
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 30 Dec 2001 13:38:11 -0800
+
+mtr (0.44-1) unstable; urgency=low
+
+  * New upstream version
+  * Added explicit build dependancies on gtk 1.2 to get the build daemons
+    to compile mtr against the newer version, closes: #103875
+
+ -- Robert Woodcock <rcw@debian.org>  Fri,  3 Aug 2001 09:02:34 -0700
+
+mtr (0.42-7) unstable; urgency=low
+
+  * The glibc folks changed res_init to a macro. Changed configure.in
+    to check for res_init with AC_TRY_COMPILE instead of AC_CHECK_LIB,
+    closes: #90365
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 15 Apr 2001 15:36:23 -0700
+
+mtr (0.42-6) unstable; urgency=low
+
+  * Added Build-Depends, closes: #83027
+  * Removed menu file for mtr-tiny, closes: #80734
+  * Fixed mtr-tiny postrm filename
+  * Removed suidregister stuff
+
+ -- Robert Woodcock <rcw@debian.org>  Mon, 22 Jan 2001 07:31:43 -0800
+
+mtr (0.42-5) unstable; urgency=low
+
+  * Added Philippe Troin's RFC 2317 CNAME->PTR reverse lookup patch,
+    closes: #29665, #38115, #42521, #46549, #78637
+
+ -- Robert Woodcock <rcw@debian.org>  Sat,  2 Dec 2000 17:44:12 -0800
+
+mtr (0.42-4) unstable; urgency=low
+
+  * Set mtr-tiny to Priority: standard
+  * Included mtr's documentation in the mtr-tiny package
+
+ -- Robert Woodcock <rcw@debian.org>  Tue,  3 Oct 2000 22:24:48 -0700
+
+mtr (0.42-3) unstable; urgency=low
+
+  * Split mtr into two packages - mtr and mtr-tiny. mtr-tiny is built
+    without X support and is useful for machines where disk space is a
+    priority. closes: #67367, #64727, #33335
+
+ -- Robert Woodcock <rcw@debian.org>  Mon,  2 Oct 2000 22:35:07 -0700
+
+mtr (0.42-2) unstable; urgency=low
+
+  * For some reason, the getopt() call was missing -g. Added it back
+    in (the code behind the option was already there)
+
+ -- Robert Woodcock <rcw@debian.org>  Wed,  6 Sep 2000 18:18:15 -0700
+
+mtr (0.42-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Robert Woodcock <rcw@debian.org>  Thu,  9 Mar 2000 17:16:50 -0800
+
+mtr (0.41-5) frozen unstable; urgency=low
+
+  * Security fix for theoretical stack-smash-and-fork attack -
+    s/seteuid/setuid/ in mtr.c
+
+ -- Robert Woodcock <rcw@debian.org>  Fri,  3 Mar 2000 19:36:56 -0800
+
+mtr (0.41-4) frozen unstable; urgency=low
+
+  * s/bind/resolv/ in configure.in line 55 and 62 to prevent ./configure
+    from getting confuzzled when bind-dev is installed, closes: #56394
+
+ -- Robert Woodcock <rcw@debian.org>  Sat, 29 Jan 2000 13:59:12 -0800
+
+mtr (0.41-3) unstable; urgency=low
+
+  * Recompiled against libncurses5
+  * Fixed postinst symlinking
+
+ -- Robert Woodcock <rcw@debian.org>  Sun,  9 Jan 2000 13:05:54 -0800
+
+mtr (0.41-2) unstable; urgency=low
+
+  * FHS compliance
+
+ -- Robert Woodcock <rcw@debian.org>  Fri, 24 Sep 1999 19:56:59 -0700
+
+mtr (0.41-1) unstable; urgency=low
+
+  * New upstream version
+  * 0.39-1 was accidentally built as a debian-native package. Fixed that.
+    closes: #44276.
+
+ -- Robert Woodcock <rcw@debian.org>  Sat,  4 Sep 1999 22:13:24 -0700
+
+mtr (0.39-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Robert Woodcock <rcw@debian.org>  Sun, 13 Jun 1999 22:56:42 -0700
+
+mtr (0.37-1) unstable; urgency=low
+
+  * New upstream release
+  * Compiled against gtk 1.2 for that extra-special theme feeling
+  * Added entry in Debian menu system
+
+ -- Robert Woodcock <rcw@debian.org>  Wed,  5 May 1999 19:18:57 -0700
+
+mtr (0.34-1) unstable; urgency=low
+
+  * New upstream version, new maintainer
+
+ -- Robert Woodcock <rcw@debian.org>  Tue,  6 Apr 1999 19:37:23 -0700
+
+mtr (0.28-0.2) frozen unstable; urgency=low
+
+  * Rebuilt with libgtk1 (1.0.6) to circumvent problems due to 
+    incompatibilities between the frozen and unstable versions of libgtk1.1 . 
+    (Fixes #29160, #29221, #29332).
+
+ -- J.H.M. Dassen (Ray) <jdassen@wi.LeidenUniv.nl>  Thu, 12 Nov 1998 14:22:10 +0100
+
+mtr (0.28-0.1) frozen unstable; urgency=low
+
+  * New upstream release; corrects the problem of IP numbers being displayed
+    backwards (Fixes #28829).
+
+ -- J.H.M. Dassen (Ray) <jdassen@wi.LeidenUniv.nl>  Mon,  2 Nov 1998 19:53:29 +0100
+
+mtr (0.25-0.1) unstable; urgency=low
+
+  * New upstream release; NMU with Scott's blessing (Fixes #28645).
+
+ -- J.H.M. Dassen (Ray) <jdassen@wi.LeidenUniv.nl>  Wed, 28 Oct 1998 16:48:48 +0100
+
+mtr (0.21-3) frozen unstable; urgency=low
+
+  * Release for frozen, since 0.14 isn't even compilable with the current
+    frozen environment, is slightly buggy, and has potential security holes
+    (being suid for low-level networking) that are addressed by this
+    version.
+
+ -- Scott K. Ellis <scott@debian.org>  Tue,  9 Jun 1998 10:52:57 -0400
+
+mtr (0.21-2) unstable; urgency=low
+
+  * Install SECURITY file into binary package.
+  * Modified description in control file
+
+ -- Scott K. Ellis <scott@debian.org>  Tue,  2 Jun 1998 11:35:00 -0400
+
+mtr (0.21-1) unstable; urgency=low
+
+  * Updated to standards version 2.4.1
+  * Linked properly to X libraries. (#19894)
+  * Rewrote debian/rules to take advanage of debhelper
+  * New upstream release. (#21534)
+
+ -- Scott K. Ellis <scott@debian.org>  Tue,  2 Jun 1998 09:47:45 -0400
+
+mtr (0.14-3) unstable; urgency=low
+
+  * Rebuild with newest gtk fixing #19511, #19517
+
+ -- Christoph Lameter <clameter@debian.org>  Sun, 15 Mar 1998 20:43:11 -0800
+
+mtr (0.14-2) unstable; urgency=low
+
+  * Build with gtk to enable X interface.
+
+ -- Christoph Lameter <clameter@debian.org>  Wed,  4 Feb 1998 11:04:35 -0800
+
+mtr (0.14-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Lameter <clameter@debian.org>  Sun,  1 Feb 1998 21:00:24 -0800
+
+mtr (0.13-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Lameter <clameter@debian.org>  Sat,  3 Jan 1998 20:48:53 -0800
+
+mtr (0.12-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Lameter <clameter@debian.org>  Sun, 28 Dec 1997 20:15:33 -0800
+
+mtr (0.11-1) debs; urgency=low
+
+  * Initial Release.
+
+ -- Christoph Lameter <clameter@debian.org>  Mon, 22 Dec 1997 21:01:15 -0800

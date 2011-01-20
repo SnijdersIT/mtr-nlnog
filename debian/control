@@ -1,0 +1,42 @@
+Source: mtr
+Section: net
+Priority: standard
+Maintainer: Robert Woodcock <rcw@debian.org>
+Standards-Version: 3.8.0
+Build-Depends: libncurses-dev, debhelper (>= 5), libgtk2.0-dev, automake1.9
+
+Package: mtr
+Architecture: any
+Priority: extra
+Depends: ${shlibs:Depends}
+Conflicts: suidmanager (<< 0.50), mtr-tiny
+Replaces: mtr-tiny
+Description: Full screen ncurses and X11 traceroute tool
+ mtr combines the functionality of the 'traceroute' and 'ping' programs 
+ in a single network diagnostic tool.
+ .
+ As mtr starts, it investigates the network connection between the host
+ mtr runs on and a user-specified destination host.  After it
+ determines the address of each network hop between the machines, 
+ it sends a sequence ICMP ECHO requests to each one to determine the 
+ quality of the link to each machine.  As it does this, it prints
+ running statistics about each machine.
+
+Package: mtr-tiny
+Architecture: any
+Priority: standard
+Depends: ${shlibs:Depends}
+Conflicts: suidmanager (<< 0.50), mtr
+Replaces: mtr
+Description: Full screen ncurses traceroute tool
+ mtr combines the functionality of the 'traceroute' and 'ping' programs
+ in a single network diagnostic tool.
+ .
+ As mtr starts, it investigates the network connection between the host
+ mtr runs on and a user-specified destination host.  After it
+ determines the address of each network hop between the machines,
+ it sends a sequence ICMP ECHO requests to each one to determine the
+ quality of the link to each machine.  As it does this, it prints
+ running statistics about each machine.
+ .
+ mtr-tiny is compiled without support for X and conserves disk space.

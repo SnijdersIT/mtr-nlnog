@@ -1,0 +1,111 @@
+#!/usr/bin/make -f
+# Made with the aid of dh_make, by Craig Small
+# Sample debian/rules that uses debhelper. GNU copyright 1997 by Joey Hess.
+# Some lines taken from debmake, by Cristoph Lameter.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# From /usr/share/doc/autotools-dev/README.Debian.gz:
+export DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+export DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+# FOR AUTOCONF 2.52 AND NEWER ONLY
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+  confflags += --build $(DEB_HOST_GNU_TYPE)
+else
+  confflags += --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+
+	touch configure.in && \
+	touch aclocal.m4 && \
+	touch configure
+
+	mkdir mtr && cd mtr && ../configure $(confflags) --prefix=`pwd`/debian/tmp/usr --mandir=`pwd`/debian/tmp/usr/share/man --sbindir=`pwd`/debian/tmp/usr/bin --enable-gtk2
+	make -C mtr
+
+	mkdir mtr-tiny && cd mtr-tiny && ../configure --prefix=`pwd`/debian/tmp/usr --mandir=`pwd`/debian/tmp/usr/share/man --sbindir=`pwd`/debian/tmp/usr/bin --without-gtk
+	make -C mtr-tiny
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	rm -rf mtr mtr-tiny
+
+	# Add here commands to clean up after the build process.
+	$(MAKE) distclean
+
+	dh_clean
+
+# Build architecture-independent files here.
+binary-indep: build
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build
+#	dh_testversion
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Add here commands to install the files into debian/tmp
+	$(MAKE) -C mtr-tiny prefix=`pwd`/debian/mtr-tiny/usr install
+	mv mtr-tiny/debian/tmp/usr/bin/mtr debian/mtr-tiny/usr/bin/
+
+	dh_installdocs -pmtr-tiny
+#	dh_installexamples -mtr-ptiny
+	dh_installmenu -pmtr-tiny
+#	dh_installinit -pmtr-tiny
+#	dh_installcron -pmtr-tiny
+	dh_installman -pmtr-tiny mtr.8
+#	dh_undocumented -pmtr-tiny
+	dh_installchangelogs -pmtr-tiny NEWS
+	dh_strip -pmtr-tiny
+	dh_compress -pmtr-tiny
+#	dh_fixperms -pmtr-tiny
+#	dh_suidregister -pmtr-tiny
+	dh_installdeb -pmtr-tiny
+	dh_shlibdeps -pmtr-tiny
+	dh_gencontrol -pmtr-tiny
+#	dh_makeshlibs -pmtr-tiny
+	dh_md5sums -pmtr-tiny
+	dh_builddeb -pmtr-tiny
+
+	dh_installdirs -pmtr
+	$(MAKE) -C mtr prefix=`pwd`/debian/mtr/usr install
+	mv mtr/debian/tmp/usr/bin/mtr debian/mtr/usr/bin/
+
+	dh_installdocs -pmtr
+#	dh_installexamples -pmtr
+	dh_installmenu -pmtr
+#	dh_installinit -pgtk
+#	dh_installcron -pmtr
+	dh_installman -pmtr mtr.8
+#	dh_undocumented -pmtr
+	dh_installchangelogs -pmtr NEWS
+	dh_strip -pmtr
+	dh_compress -pmtr
+#	dh_fixperms -pmtr
+#	dh_suidregister -pmtr
+	dh_installdeb -pmtr
+	dh_shlibdeps -pmtr
+	dh_gencontrol -pmtr
+#	dh_makeshlibs -pmtr
+	dh_md5sums -pmtr
+	dh_builddeb -pmtr
+
+
+source diff:                                                                  
+	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary
