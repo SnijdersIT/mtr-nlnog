@@ -15,7 +15,8 @@ mtr_SOURCES = mtr.c \
               getopt.c getopt1.c getopt.h \
               select.c select.h \
               mtr-curses.h \
-              mtr-gtk.h
+              mtr-gtk.h \
+              asn.c asn.h
 EXTRA_mtr_SOURCES = curses.c \
                     gtk.c
 mtr_DEPENDENCIES = $(GTK_OBJ) $(CURSES_OBJ)

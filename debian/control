@@ -3,7 +3,7 @@ Section: net
 Priority: standard
 Maintainer: Robert Woodcock <rcw@debian.org>
 Standards-Version: 3.8.0
-Build-Depends: libncurses-dev, debhelper (>= 5), libgtk2.0-dev, automake1.9
+Build-Depends: libncurses-dev, debhelper (>= 5), libgtk2.0-dev, automake1.9, libglib2.0-dev
 
 Package: mtr
 Architecture: any

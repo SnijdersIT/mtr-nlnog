@@ -1,3 +1,9 @@
+mtr (0.75-nlnog2-2build1) lucid; urgency=low
+
+  * apply ASN patch from http://www.roderick.triple-it.nl/pub/mtr/mtr-0.80.asn.patch
+
+ -- Peter van Dijk <peter@xlshosting.nl>  Fri, 21 Jan 2011 09:09:00 +0100
+
 mtr (0.75-nlnog1-2build1) lucid; urgency=low
 
   * allow non-root users to specify subsecond intervals
